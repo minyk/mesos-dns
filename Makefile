@@ -1,6 +1,6 @@
 include Makefile.mk
 
-USERNAME=xebia
+USERNAME=minyk
 NAME=$(shell basename $(PWD))
 
 pre-build: empty mesos-dns
@@ -11,7 +11,6 @@ post-build:
 empty:
 	mkdir empty
 
-mesos-dns: main.go 
+mesos-dns: main.go
 		rm -f mesos-dns
 	        docker run --rm -v $$(pwd):/src -v /var/run/docker.sock:/var/run/docker.sock centurylink/golang-builder
-
